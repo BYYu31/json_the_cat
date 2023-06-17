@@ -10,6 +10,7 @@ const fetchBreedDescription = function(breedName, callback) {
       callback(error,body);
     } else if (body.length === 2) {
       error = 'No such cat';
+      body = null;
       callback(error, body);
     } else {
       const data = JSON.parse(body)[0]['description'];
